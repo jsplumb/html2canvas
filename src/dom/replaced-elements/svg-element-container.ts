@@ -14,6 +14,8 @@ export class SVGElementContainer extends ElementContainer {
         img.setAttribute('width', `${bounds.width}px`);
         img.setAttribute('height', `${bounds.height}px`);
 
+        img.style.position = '';    // Added by sporritt as fix for #3175        
+
         this.svg = `data:image/svg+xml,${encodeURIComponent(s.serializeToString(img))}`;
         this.intrinsicWidth = img.width.baseVal.value;
         this.intrinsicHeight = img.height.baseVal.value;
